@@ -23,7 +23,5 @@ jobs:
       run: sftp ${{ secrets.USER }}@${{ secrets.HOST }} <<< $'rm /public_html/home/*'
     - name: upload new version
       run: scp -r . ${{ secrets.USER }}@${{ secrets.HOST }}:/public_html/home/
-    - name: upload theme css into static folder
-      run: scp ./css/theme.css ${{ secrets.USER }}@${{ secrets.HOST }}:/public_html/static/css/
     - name: cleanup
       run: rm -rf ~/.ssh
