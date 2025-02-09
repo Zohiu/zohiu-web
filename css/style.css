@@ -1,41 +1,13 @@
-:root {
-    --object-background-color: #09010f;
-    --border-color: #9f8e9d;
-
-    --accent-color: #D822C5;
-    --second-color: #9e22d8;
-    --third-color: #0000FF;
-    --main-color: white;
-
-    --background: linear-gradient(0, black 0%, #190623 100%);
-    --text-gradient: linear-gradient(to right, var(--main-color) 0%, var(--accent-color) 100%);
-
-    --content-width: 60vw
-}
-
-body {
-    background: var(--background);
-
-    color: var(--main-color);
-    padding: 0px;
-    margin: 0px;
-
-    font-family:'Courier New', Courier, monospace;
-}
-
+@import url(https://zohiu.de/static/css/theme.css);
 
 h1 {
-    background: #FFF;
-    background: var(--text-gradient);
-    z-index: 1;
-
-    filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
-
-    width: fit-content;
-    background-clip: text;
-    color: transparent;
+    filter: light-dark(none, drop-shadow(0px 0px 10px rgba(0,0,0,0.5)));
+    font-size: var(--size6);
 }
 
+h2 {
+    margin-top: var(--size0);
+}
 
 /* Logo cloud section */
 
@@ -43,13 +15,14 @@ h1 {
     margin-top: 3rem;    
     margin-bottom: 3rem;
 
-    height: 60vh;
+    height: 40vh;
+    width: 100vw;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background-color: var(--object-background-color);
+    background-color: var(--object-background);
 
     border-style: solid;
     border-color: var(--border-color);
@@ -70,18 +43,13 @@ h1 {
     min-width: 100%;
     height: 30vh;
     overflow: hidden;
-    transition: 750ms;
 }
 
 .cloud-content {
     display: grid;
     grid-template-rows: 15vh 30vh 15vh;
-    grid-template-columns: var(--content-width);
+    grid-template-columns: 60vw;
     place-items: center;
-}
-
-.cloud:hover > .cloud-clip {
-    height: 60vh;
 }
 
 .name {
@@ -94,7 +62,6 @@ h1 {
     height: 30vh;
     z-index: 1;
     filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
-    transition: 100ms;
 }
 
 .subtitle {
@@ -140,8 +107,8 @@ h1 {
 /* Content Boxes */
 
 .box {
-    max-width: 1000px;
-    background-color: var(--object-background-color);
+    max-width: 70rem;
+    background-color: var(--object-background);
 
     border-style: solid;
     border-color: var(--border-color);
@@ -155,37 +122,18 @@ h1 {
 
     margin-bottom: 3rem;
 
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
+    padding-left: var(--size2);
+    padding-right: var(--size2);
+    padding-bottom: var(--size2);
 
     overflow: hidden;
 
     text-align: center;
     height: inherit;
-
-    transition: 1s;
-}
-
-
-h2 {
-    background: #FFF;
-    background: var(--text-gradient);
-
-    width: fit-content;
-    background-clip: text;
-    color: transparent;
-
-    margin-left: auto;
-    margin-right: auto;
 }
 
 ul, ol {
     text-align: left;
-}
-
-li {
-    margin-top: 1em;
 }
 
 .embeds {
@@ -243,38 +191,6 @@ li {
     object-fit: contain;
 }
 
-/* a tag hover effects */
-
-a {
-    text-decoration: none;
-    color: var(--second-color);
-    position: relative;
-}
-
-a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: var(--accent-color);
-    bottom: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-}
-
-a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-a:hover {
-    color: var(--accent-color);
-    text-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--second-color), 0 0 15px var(--third-color);
-}
-
-
 /* Blur rotating circles */
 
 .rotate {
@@ -300,7 +216,7 @@ a:hover {
     width: 200px;
     height: 200px;
     border-radius: 1000000px;
-    background-color: var(--third-color); 
+    background-color: var(--secondary); 
 }
 
 .bg-gradient-blur-circle-2 {
@@ -312,7 +228,7 @@ a:hover {
     width: 250px;
     height: 250px;
     border-radius: 1000000px;
-    background-color: var(--accent-color);
+    background-color: var(--accent);
 }
 
 .bg-gradient-blur-circle-3 {
@@ -324,7 +240,7 @@ a:hover {
     width: 120px;
     height: 120px;
     border-radius: 1000000px;
-    background-color: var(--main-color); 
+    background-color: var(--primary-desaturated); 
 }
 
 .bg-gradient-blur-circle-4 {
@@ -335,7 +251,7 @@ a:hover {
     width: 200px;
     height: 200px;
     border-radius: 1000000px;
-    background-color: var(--second-color);
+    background-color: var(--primary);
 }
 
 @keyframes rotation {
