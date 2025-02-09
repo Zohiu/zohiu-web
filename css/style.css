@@ -1,5 +1,9 @@
 @import url(https://zohiu.de/static/css/theme.css);
 
+body {
+    overflow-x: hidden;
+}
+
 h1 {
     filter: light-dark(none, drop-shadow(0px 0px 10px rgba(0,0,0,0.5)));
     font-size: var(--size6);
