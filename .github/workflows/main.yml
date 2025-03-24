@@ -19,6 +19,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        submodules: 'recursive'
     - name: remove old version
       run: sftp ${{ secrets.USER }}@${{ secrets.HOST }} <<< $'rm /public_html/home/*'
     - name: upload new version
